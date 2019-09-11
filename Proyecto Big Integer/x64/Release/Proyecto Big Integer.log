@@ -1,0 +1,14 @@
+﻿  Integer.cpp
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(9,35): warning C4267:  'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(22,44): warning C4244:  '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(38,50): warning C4267:  'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(49,62): warning C4244:  '+=': conversión de 'double' a 'short'; posible pérdida de datos
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(57,48): warning C4267:  'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(60,39): warning C4244:  '+=': conversión de 'double' a 'short'; posible pérdida de datos
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(12,6): warning C4101:  'veces': variable local sin referencia
+  Generando código
+  2 of 168 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  Proyecto Big Integer.vcxproj -> C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\x64\Release\Proyecto Big Integer.exe

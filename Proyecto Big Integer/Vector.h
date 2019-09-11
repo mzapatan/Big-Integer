@@ -3,12 +3,13 @@
 class Vector
 {
 private:
-	unsigned short int **vector;
+	 short int **vector;
 	int const tamano = 4;
 public:
 	Vector();
-	unsigned short int** getVector();
-	void setVector(unsigned short int** NewArray);
+	short int** getVector();
+	void setVector( short int** NewArray);
+	~Vector();
 };
 
 #endif // !VECTOR

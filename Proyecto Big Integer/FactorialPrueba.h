@@ -11,6 +11,7 @@ class FactorialPrueba
 
 	// This function finds factorial of large numbers 
 	// and prints them 
+public:
 	string factorial(int n);
 
 	// This function multiplies x with the number  

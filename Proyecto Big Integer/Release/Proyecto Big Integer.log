@@ -1,0 +1,9 @@
+﻿  Main.cpp
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Main.cpp(20,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Main.cpp(34,18): warning C4101:  'p': variable local sin referencia
+  Generando código
+  4 of 173 functions ( 2.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  Proyecto Big Integer.vcxproj -> C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Release\Proyecto Big Integer.exe

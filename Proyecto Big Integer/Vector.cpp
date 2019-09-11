@@ -3,20 +3,30 @@
 Vector::Vector()
 {
 	
-	vector = new unsigned short int*[tamano];
+	vector = new short int*[tamano];
 	for (int i = 0; i < tamano; i++) {
 		vector[i] = nullptr;
 	}
 }
 
-unsigned short int** Vector::getVector()
+ short int** Vector::getVector()
 {
 	return vector;
 }
 
-void Vector::setVector(unsigned short int** NewArray)
+void Vector::setVector( short int** NewArray)
 {
 	if (NewArray != nullptr) {
 		this->vector = NewArray;
+		}
+
+
 }
+
+Vector::~Vector()
+{
+	for (int i = 0; i < tamano; i++) {
+		delete vector[i];
+	}
+	delete[]vector;
 }

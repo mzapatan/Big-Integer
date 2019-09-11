@@ -2,60 +2,93 @@
 
 Integer::Integer(string valorEntrante)
 {
-	string valor;
+	string valorEntranteInverso;
 	for (string::reverse_iterator inverso = valorEntrante.rbegin(); inverso != valorEntrante.rend(); inverso++) {
-		valor= valor+*inverso;
+		valorEntranteInverso = valorEntranteInverso + *inverso;
 	}
-	//cout << valor << endl;
-	tamano = valor.size();
+	int tamano = valorEntrante.size();
+	short valorMax = 32767;
+	short valorMin = -32767;
+	int veces;
+	int valorPrimario=0;
+	//Validamos que el tamano sea mayor a la capacidad de un short
 	
-	int veces = 1;
-	if (tamano > 4) {
-		if (tamano % 2 == 0) {
+	if (tamano >= 5) {
 
-			veces = tamano / 4;
+		
+		int potencia = 4;
+		for	(int i = 0; i < 5; i++) {
+			char c = valorEntrante[i];
+			int val = c - '0';
+			valorPrimario += pow(10, potencia) * val;
+			potencia--;
 		}
-		else {
-			veces = tamano / 4;
-			veces++;
-		}
-	}
-
-
-	int contInsercion = 0;
-	for (int i = 0; i < veces; i++) {
-		Vector* vec = new Vector();
-		unsigned short** aux = vec->getVector();
-
-		for (int j = 0; j < 4; j++) {
-			int indice = valor.size() - 1;
-			if (indice > -1 && contInsercion != tamano) {
-				char c = valor[indice];
-				unsigned short numero = c - '0';
-				//cout << numero << endl;
-				delete aux[j];
-				aux[j] = new unsigned short(numero);
-				valor.pop_back();
-				contInsercion++;
-			}
-
-		}
-		bigInteger.addBack(vec);
-	}
-
-
-	if (!bigInteger.vacio()) {
-		for (int i = 1; i <= this->bigInteger.tamano(); i++) {
-			Vector* aux = bigInteger.getDato(i);
-			unsigned short** vector = aux->getVector();
+	}	
+	
+	if (tamano >= 5 || (valorPrimario > valorMax || valorPrimario < valorMin)) {
+		//si es mayor, solamente utilizaremos short con su maxima capacidad de pow(N,3)[Unidades de Millar], a N que pertence a [0..9] de
+		while (valorEntranteInverso.size() > 0) {
+			Vector* auxVec = new Vector();
+			short int** auxDatos = auxVec->getVector();//el vector
 			for (int j = 0; j < 4; j++) {
-				unsigned short* var = vector[4];
-				vector[4] = vector[1];
 
+				int potencia = 3;
+				short valor = 0;
+				
+				int indice = valorEntranteInverso.size() - 1;
+					if (valorEntranteInverso[indice] - '0' == 0&& indice>=0) {
+						auxDatos[j] = new short int(valor);
+						cout << "Valor: " << valor << endl;
+						valorEntranteInverso.pop_back();
+						if (valorEntranteInverso.size() == 0) {
+							j = 7;
+						}
+					}
+					else if (valorEntranteInverso.size() <= 4) {
 
+						
+						int indice = valorEntranteInverso.size();
+						for (int i = 0; i < indice; i++) {//aqui
+						int pos = valorEntranteInverso.size() - 1;
+						char c = valorEntranteInverso[pos];
+						cout <<endl << pos << endl;
+						short val = c - '0';
+						valor = ( pow(10, pos) * val) + valor;
+						cout << "Valor: " << valor << endl;
+						valorEntranteInverso.pop_back();
+						}
+				
+					auxDatos[j] = new short int(valor);
+					j = 7;
+				}
+				else {
+
+					for (int i = 0; i < 4; i++) {
+						int pos = valorEntranteInverso.size() - 1;
+						
+						char c = valorEntranteInverso[pos];
+						short val = c - '0';
+						valor += pow(10, potencia) * val;
+						
+						valorEntranteInverso.pop_back();
+						potencia--;
+					}
+					cout << "Valor: " << valor;
+					auxDatos[j] = new short int(valor);
+				}
 			}
+
+			bigInteger.addBack(auxVec);
 		}
+	}else if(tamano<5) {
+		Vector* auxVec = new Vector();
+		short int** auxDatos = auxVec->getVector();//el vector
+		int transform = atoi(valorEntrante.c_str());
+		auxDatos[0] = new short int(transform);
+		bigInteger.addFront(auxVec);
 	}
+
+	cout << "Listo" << endl;
 }
 string Integer::toString()
 {
