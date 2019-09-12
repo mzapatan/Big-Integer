@@ -1,3 +1,7 @@
+// Integer.h
+// Autor: Dorian Vallecillo
+// Descripción: Modelo del Big Integer
+//
 #ifndef INTEGER_H
 #define INTEGER_H
 #include "Estructuras_Lineales.h"
