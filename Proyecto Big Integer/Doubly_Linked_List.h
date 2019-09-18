@@ -5,6 +5,7 @@
 #ifndef DOUBLY_LINKED_LIST
 #define DOUBLY_LINKED_LIST
 #include "Nodo.h"
+#include <iostream>
 template<class T>
 struct DoublyNodo {
 public:
@@ -35,7 +36,7 @@ public:
 	T* getDatoReverse(int);
 	~Doubly_Linked_List();
 	int tamano();
-
+	void vaciarLista();
 
 };
 #endif
@@ -180,11 +181,10 @@ inline T* Doubly_Linked_List<T>::getDatoReverse(int indice)
 template<class T>
 inline Doubly_Linked_List<T>::~Doubly_Linked_List()
 {
-	while (head->siguiente != actual) {
-		removeFront();
-	}
-	delete head;
-	delete actual;
+	vaciarLista();
+	
+
+	
 }
 
 template<class T>
@@ -198,4 +198,18 @@ inline int Doubly_Linked_List<T>::tamano()
 	}
 	return i;
 
+}
+
+template<class T>
+inline void Doubly_Linked_List<T>::vaciarLista()
+{
+	if (!vacio()) {
+		while (head->siguiente != actual)
+		{
+			removeFront();
+		}
+		
+	}
+
+	
 }

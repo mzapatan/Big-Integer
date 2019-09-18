@@ -27,10 +27,24 @@ void Vector::setVector( short int** NewArray)
 
 }
 
+int Vector::size()
+{
+	int retorno = 0;
+	for (int i = 0; i < tamano; i++) {
+		if (vector[i] != nullptr) {
+			retorno++;
+		}
+	}
+	return retorno;
+}
+
 Vector::~Vector()
 {
 	for (int i = 0; i < tamano; i++) {
-		delete vector[i];
+		if (vector[i] != nullptr) {
+			delete vector[i];
+		}
+		
 	}
-	delete[]vector;
+	
 }

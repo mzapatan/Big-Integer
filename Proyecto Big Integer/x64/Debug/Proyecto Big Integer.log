@@ -1,9 +1,3 @@
-﻿  Integer.cpp
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(9,35): warning C4267:  'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(22,44): warning C4244:  '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(36,49): warning C4267:  'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(50,62): warning C4244:  '+=': conversión de 'double' a 'short'; posible pérdida de datos
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(58,48): warning C4267:  'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(61,39): warning C4244:  '+=': conversión de 'double' a 'short'; posible pérdida de datos
-C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Integer.cpp(12,6): warning C4101:  'veces': variable local sin referencia
+﻿  Main.cpp
+C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\Proyecto Big Integer\Main.cpp(82,18): warning C4101:  'p': variable local sin referencia
   Proyecto Big Integer.vcxproj -> C:\Users\Monica\Documents\Dorian\2do Semestre 2019\Estructuras de Datos\Proyecto I\Proyecto Big Integer\x64\Debug\Proyecto Big Integer.exe

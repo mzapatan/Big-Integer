@@ -8,11 +8,13 @@ class Vector
 {
 private:
 	 short int **vector;
-	int const tamano = 4;
+	
 public:
+	int const tamano = 12;
 	Vector();
 	short int** getVector();
 	void setVector( short int** NewArray);
+	int size();
 	~Vector();
 };
 
