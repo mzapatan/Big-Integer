@@ -1,6 +1,6 @@
 // Integer.cpp
 // Autor: Dorian Vallecillo
-// Descripción: Modelo del Big Integer
+// DescripciÃ³n: Modelo del Big Integer
 //
 #include "Integer.h"
 
@@ -167,19 +167,18 @@ bool Integer::operator ==( Integer& valor)  {
 	string string_1 = convertir_str_quitar_ceros();
 	string string_2 = valor.convertir_str_quitar_ceros();
 
-	if (string_1.size() != string_2.size()) {	//Se verifica si el tamaño es igual, si no lo es retorna falso.
+	if (string_1.size() != string_2.size()) {	//Se verifica si el tamaï¿½o es igual, si no lo es retorna falso.
 		return false;
 	}
 	else {
-		for (int i = 0; i < string_1.size(); i++) {   //Se verifica elemento por elemento de la cifra para verificar si el número es identico.
-			if (string_1[i] != string_2[i]) {
+		for (int i = 0; i < string_1.size(); i++) {   //Se verifica elemento por elemento de la cifra para verificar si el nï¿½mero es identico.
+			if ((int(string_1[i]) != int(string_2[i]))) {
 				return false;
 			}
 		}
-		//COMENTARIO HECHO POR DORIAN:
-			//Por favor convertir los string_1[i] a algun tipo de dato primitivo numerico
-			//Por favor revisar los limites de los while, ya que si el string 1 tiene 50 caractares y el 2 solo 20
-			//al verificar la posicion [20] dará error
+		//COMENTARIO HECHO POR MIKE:
+			//Con los lï¿½mites no darï¿½a error por que en los if iniciales, se retorna true y false, segï¿½n el size de los numeros, ya que esto cumplirï¿½a la condiciï¿½n directamente
+			//La condiciï¿½n para entrar al for o while es que el tamaï¿½o de ambos sea iguales, esto ya sin los ceros a la izquierda que previamente fueron quitados.
 	}
 	return true;
 }
@@ -188,19 +187,18 @@ bool Integer::operator !=(Integer& valor) {
 	string string_1 = convertir_str_quitar_ceros();
 	string string_2 = valor.convertir_str_quitar_ceros();
 
-	if (string_1.size() != string_2.size()) {   //Se verifica si el tamaño es diferente, al cumplirse esto retorna verdadero.
+	if (string_1.size() != string_2.size()) {   //Se verifica si el tamaï¿½o es diferente, al cumplirse esto retorna verdadero.
 		return true;
 	}
 	else {
-		for (int i = 0; i < string_1.size(); i++) {  //Se verifica elemento por elemento de la cifra para verificar si hay algún elemento diferente.
-			if (string_1[i] != string_2[i]) {
+		for (int i = 0; i < string_1.size(); i++) {  //Se verifica elemento por elemento de la cifra para verificar si hay algï¿½n elemento diferente.
+			if (int(string_1[i]) != int(string_2[i])) {
 				return true;
 			}
 		}
-		//COMENTARIO HECHO POR DORIAN:
-			//Por favor convertir los string_1[i] a algun tipo de dato primitivo numerico
-			//Por favor revisar los limites de los while, ya que si el string 1 tiene 50 caractares y el 2 solo 20
-			//al verificar la posicion [20] dará error
+		//COMENTARIO HECHO POR MIKE:
+				//Con los lï¿½mites no darï¿½a error por que en los if iniciales, se retorna true y false, segï¿½n el size de los numeros, ya que esto cumplirï¿½a la condiciï¿½n directamente
+				//La condiciï¿½n para entrar al for o while es que el tamaï¿½o de ambos sea iguales, esto ya sin los ceros a la izquierda que previamente fueron quitados.
 	}
 	return false;
 }
@@ -209,27 +207,29 @@ bool Integer::operator <(Integer& valor) {
 	string string_1 = convertir_str_quitar_ceros();
 	string string_2 = valor.convertir_str_quitar_ceros();
 
-	if (string_1.size() < string_2.size()) {   //Primero se verifica si el primer número de A es menor al de B, al cumplirse esto, directamente se sabría que es menor la cifra.
+	if (string_1.size() < string_2.size()) {   //Primero se verifica si el primer nï¿½mero de A es menor al de B, al cumplirse esto, directamente se sabrï¿½a que es menor la cifra.
 		return true;
 	}
-	else if (string_1[0] < string_2[0]) {   //Al tener la misma cantidad de digitos, se verifica si el primer digito es igual o menor, al ser menor cumple directamente la condición.
+	if (string_1.size() > string_2.size()) {   //Luego se verifica si el primer nï¿½mero de A es mayor al de B, al cumplirse esto, directamente se sabrï¿½a que es menor la cifra.
+		return false;
+	}
+	else if (string_1[0] < string_2[0]) {   //Al tener la misma cantidad de digitos, se verifica si el primer digito es igual o menor, al ser menor cumple directamente la condiciï¿½n.
 		return true;
 	}
-	else if (string_1[0] == string_2[0]) { //Si las dos cifras incian con el mismo digito, se comenzará a envaluar digito por digito hasta verificar con el resto de la cifra que se cumpla o no la condición del operador.
+	else if (string_1[0] == string_2[0]) { //Si las dos cifras incian con el mismo digito, se comenzarï¿½ a envaluar digito por digito hasta verificar con el resto de la cifra que se cumpla o no la condiciï¿½n del operador.
 		int i = 1;
 		while (i < string_1.size()) {
 
-			if (string_1[i] < string_2[i]) {  //Se recorren todos los digitos, en el momento que un dígito de A sea mayor a B, se dejará de cumplir la condición y se retorna falso, sino true.
+			if (int(string_1[i]) < int(string_2[i])) {  //Se recorren todos los digitos, en el momento que un dï¿½gito de A sea mayor a B, se dejarï¿½ de cumplir la condiciï¿½n y se retorna falso, sino true.
 				return true;
 			}
 			else if (string_1[i] > string_2[i]) {
 				return false;
 			}
 			++i;
-			//COMENTARIO HECHO POR DORIAN:
-			//Por favor convertir los string_1[i] a algun tipo de dato primitivo numerico
-			//Por favor revisar los limites de los while, ya que si el string 1 tiene 50 caractares y el 2 solo 20
-			//al verificar la posicion [20] dará error
+			//COMENTARIO HECHO POR MIKE:
+			//Con los lï¿½mites no darï¿½a error por que en los if iniciales, se retorna true y false, segï¿½n el size de los numeros, ya que esto cumplirï¿½a la condiciï¿½n directamente
+			//La condiciï¿½n para entrar al for o while es que el tamaï¿½o de ambos sea iguales, esto ya sin los ceros a la izquierda que previamente fueron quitados.
 		}
 	}
 	return false;
@@ -239,28 +239,30 @@ bool Integer::operator >(Integer& valor) {
 	string string_1 = convertir_str_quitar_ceros();
 	string string_2 = valor.convertir_str_quitar_ceros();
 
-	if (string_1.size() > string_2.size()) {  //Primero se verifica si el primer número de A es menor al de B, al cumplirse esto, directamente se sabría que es mayor la cifra.
+	if (string_1.size() > string_2.size()) {  //Primero se verifica si el primer nï¿½mero de A es menor al de B, al cumplirse esto, directamente se sabrï¿½a que es mayor la cifra.
 		return true;
 	}
-	else if (string_1[0] > string_2[0]) {//Al tener la misma cantidad de digitos, se verifica si el primer digito es igual o mayor, al ser mayor cumple directamente la condición.
+	if (string_1.size() < string_2.size()) {  //Luego se verifica si el primer nï¿½mero de A es mayor al de B, al cumplirse esto, directamente se sabrï¿½a que es mayor la cifra.
+		return false;
+	}
+	else if (string_1[0] > string_2[0]) {//Al tener la misma cantidad de digitos, se verifica si el primer digito es igual o mayor, al ser mayor cumple directamente la condiciï¿½n.
 		return true;
 	}
-	else if (string_1[0] == string_2[0]) { //Si las dos cifras incian con el mismo digito, se comenzará a envaluar digito por digito hasta verificar con el resto de la cifra que se cumpla o no la condición del operador.
+	else if (string_1[0] == string_2[0]) { //Si las dos cifras incian con el mismo digito, se comenzarï¿½ a envaluar digito por digito hasta verificar con el resto de la cifra que se cumpla o no la condiciï¿½n del operador.
 		int i = 1;
 		while (i < string_1.size()) {
 
-			if (string_1[i] > string_2[i]) {
+			if (int(string_1[i]) > int(string_2[i])) {
 				return true;
 			}
-			else if (string_1[i] < string_2[i]) {  //Se recorren todos los digitos, en el momento que un dígito de A sea menor a B, se dejará de cumplir la condición y se retorna falso, sino true.
+			else if (string_1[i] < string_2[i]) {  //Se recorren todos los digitos, en el momento que un dï¿½gito de A sea menor a B, se dejarï¿½ de cumplir la condiciï¿½n y se retorna falso, sino true.
 				return false;
 			}
 			++i;
 
-			//COMENTARIO HECHO POR DORIAN:
-			//Por favor convertir los string_1[i] a algun tipo de dato primitivo numerico
-			//Por favor revisar los limites de los while, ya que si el string 1 tiene 50 caractares y el 2 solo 20
-			//al verificar la posicion [20] dará error
+			//COMENTARIO HECHO POR MIKE:
+			//Con los lï¿½mites no darï¿½a error por que en los if iniciales, se retorna true y false, segï¿½n el size de los numeros, ya que esto cumplirï¿½a la condiciï¿½n directamente
+			//La condiciï¿½n para entrar al for o while es que el tamaï¿½o de ambos sea iguales, esto ya sin los ceros a la izquierda que previamente fueron quitados.
 		}
 	}
 	return false;
